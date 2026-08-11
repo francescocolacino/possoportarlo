@@ -835,23 +835,130 @@ summary:focus-visible {
 }
 
 /* ============================================================
-   Ad slot
+   Advertising
    ============================================================ */
-.ad-slot {
+.ad-section {
   margin-top: clamp(2rem, 1.7rem + 1.5vw, 3rem);
-  display: grid;
-  place-items: center;
-  min-height: 84px;
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-md);
-  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  overflow: hidden;
 }
 
-.ad-slot__label {
-  font-size: 0.76rem;
+.ad-section--leaderboard {
+  display: none;
+}
+
+.ad-section__label {
+  color: var(--muted);
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  line-height: 1;
   text-transform: uppercase;
+}
+
+.ad-unit {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.ad-unit--160x300 {
+  width: 160px;
+  min-height: 300px;
+}
+
+.ad-unit--160x600 {
+  width: 160px;
+  min-height: 600px;
+}
+
+.ad-unit--300x250 {
+  width: 300px;
+  min-height: 250px;
+}
+
+.ad-unit--320x50 {
+  width: 320px;
+  min-height: 50px;
+}
+
+.ad-unit--468x60 {
+  display: none;
+  width: 468px;
+  min-height: 60px;
+}
+
+.ad-unit--728x90 {
+  width: 728px;
+  min-height: 90px;
+}
+
+.ad-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  justify-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.ad-section--native {
+  align-items: stretch;
+}
+
+.ad-section--native .ad-section__label {
+  align-self: center;
+}
+
+#container-cfcc443ffd36dc64e8dd5e8a86ab56c8 {
+  width: 100%;
+  min-height: 90px;
+}
+
+.ad-smartlink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin-top: 0.35rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ad-smartlink:hover,
+.ad-smartlink:focus-visible {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+@media (min-width: 520px) {
+  .ad-unit--468x60 {
+    display: grid;
+  }
+}
+
+@media (min-width: 768px) {
+  .ad-section--leaderboard {
+    display: flex;
+  }
+
+  .ad-grid {
+    grid-template-columns: 160px 300px 160px;
+    justify-content: center;
+    gap: clamp(1.5rem, 4vw, 4rem);
+  }
 }
 
 /* ============================================================
