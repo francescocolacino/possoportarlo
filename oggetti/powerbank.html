@@ -3,43 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Powerbank | PossoPortarlo?</title>
+    <meta
+      name="description"
+      content="Powerbank in aereo: puoi portarla nel bagaglio a mano entro i limiti di capacità, mai in stiva. Scopri la regola generale su PossoPortarlo?."
+    />
+    <meta name="theme-color" content="#0B1736" />
+    <title>Powerbank in aereo: si può portare? | PossoPortarlo?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="../index.html"><span aria-hidden="true">✈️</span> PossoPortarlo?</a>
-        <nav class="main-nav" aria-label="Menu principale">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#ricerca">Cerca oggetto</a>
-          <a href="../index.html#compagnie">Compagnie aeree</a>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-plane" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2 12 21 3 14 21 11 13 2 12Z" />
+        <path d="M21 3 11 13" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" fill="none" opacity=".55" />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 6 18 18M18 6 6 18" />
+      </symbol>
+    </svg>
+
+    <header class="site-header" data-header>
+      <div class="container header-bar">
+        <a class="brand" href="../index.html" aria-label="PossoPortarlo? — Home">
+          <svg class="icon brand__icon" aria-hidden="true" focusable="false"><use href="#icon-plane"></use></svg>
+          <span class="brand__text">PossoPortarlo<span class="brand__mark">?</span></span>
+        </a>
+
+        <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav" aria-label="Apri il menu">
+          <svg class="icon nav-toggle__icon" aria-hidden="true" focusable="false"><use href="#icon-menu" data-nav-toggle-icon></use></svg>
+        </button>
+
+        <nav class="main-nav" id="main-nav" data-main-nav aria-label="Menu principale">
+          <a class="main-nav__link" href="../index.html#cerca" data-nav-link>Cerca</a>
+          <a class="main-nav__link" href="../index.html#categorie" data-nav-link>Categorie</a>
+          <a class="main-nav__link" href="../index.html#compagnie" data-nav-link>Compagnie</a>
+          <a class="main-nav__link" href="../index.html#guide" data-nav-link>Guide</a>
+          <a class="btn btn--primary main-nav__cta" href="../index.html#cerca" data-nav-link>Verifica un oggetto</a>
         </nav>
       </div>
     </header>
 
-    <main class="container" style="padding: 3rem 0;">
-      <article class="result-card">
-        <p class="eyebrow">Categoria: Elettronica</p>
-        <h1>Powerbank 20.000 mAh</h1>
-        <p>Le batterie al litio possono essere portate nel bagaglio a mano entro determinati limiti di capacità.</p>
-        <div class="result-grid">
-          <div class="result-row positive">
-            <span class="status-icon" aria-hidden="true">✅</span>
-            <div>
-              <p class="mini-label">Bagaglio a mano</p>
-              <strong>Consentito</strong>
-            </div>
+    <main id="main-content">
+      <article class="detail container">
+        <p class="eyebrow">Categoria: Elettronica e batterie</p>
+        <h1 class="detail__title">Powerbank 20.000 mAh</h1>
+        <p class="detail__lead">
+          Le batterie al litio possono essere portate nel bagaglio a mano entro determinati
+          limiti di capacità, ma non sono ammesse nel bagaglio da stiva.
+        </p>
+
+        <div class="pass__grid detail__grid">
+          <div class="pass__status pass__status--yes">
+            <p class="pass__status-label">Bagaglio a mano</p>
+            <p class="pass__status-value">SÌ</p>
+            <p class="pass__status-note">Consentito</p>
           </div>
-          <div class="result-row negative">
-            <span class="status-icon" aria-hidden="true">❌</span>
-            <div>
-              <p class="mini-label">Bagaglio da stiva</p>
-              <strong>Non consentito</strong>
-            </div>
+          <div class="pass__status pass__status--no">
+            <p class="pass__status-label">Bagaglio da stiva</p>
+            <p class="pass__status-value">NO</p>
+            <p class="pass__status-note">Non consentito</p>
           </div>
         </div>
+
+        <p class="detail__lead">
+          Regola generale: sopra i 100 Wh serve l'autorizzazione della compagnia; oltre i 160 Wh
+          generalmente non è ammessa. Verifica sempre le condizioni ufficiali del vettore prima della partenza.
+        </p>
+
+        <a class="detail__back" href="../index.html">← Torna alla home</a>
       </article>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="../index.html">
+            <svg class="icon brand__icon" aria-hidden="true" focusable="false"><use href="#icon-plane"></use></svg>
+            <span class="brand__text">PossoPortarlo<span class="brand__mark">?</span></span>
+          </a>
+          <p class="footer-tagline">Meno dubbi in valigia.</p>
+        </div>
+
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h3 class="footer-col__title">Esplora</h3>
+            <ul>
+              <li><a href="../index.html#categorie">Categorie</a></li>
+              <li><a href="../index.html#cerca">Oggetti</a></li>
+              <li><a href="../index.html#guide">Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-col__title">Compagnie</h3>
+            <ul>
+              <li><a href="../compagnie/ryanair.html">Ryanair</a></li>
+              <li><a href="../compagnie/easyjet.html">easyJet</a></li>
+              <li><a href="../index.html#compagnie">ITA Airways</a></li>
+              <li><a href="../index.html#compagnie">Wizz Air</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-col__title">Informazioni</h3>
+            <ul>
+              <li><a href="../index.html#">Chi siamo</a></li>
+              <li><a href="../index.html#">Privacy</a></li>
+              <li><a href="../index.html#">Cookie</a></li>
+              <li><a href="../index.html#disclaimer">Disclaimer</a></li>
+              <li><a href="../index.html#">Contatti</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span data-year>2026</span> PossoPortarlo? — Tutti i diritti riservati.</p>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
   </body>
 </html>
