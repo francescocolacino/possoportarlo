@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PossoPortarlo? aiuta a capire se un oggetto può essere portato in aereo, nel bagaglio a mano o in stiva."
+    />
+    <title>PossoPortarlo?</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="PossoPortarlo? Home">
+          <span aria-hidden="true">✈️</span>
+          <span>PossoPortarlo?</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Menu principale">
+          <a href="index.html">Home</a>
+          <a href="#ricerca">Cerca oggetto</a>
+          <a href="#compagnie">Compagnie aeree</a>
+          <a href="#guide">Guide</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <a class="btn btn-primary btn-header" href="#ricerca">Controlla un oggetto</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Guida veloce ai bagagli in aereo</p>
+            <h1>Posso portarlo in aereo?</h1>
+            <p class="hero-subtitle">
+              Scopri in pochi secondi se un oggetto può viaggiare nel bagaglio a mano
+              o in stiva.
+            </p>
+          </div>
+
+          <div class="search-panel" id="ricerca">
+            <form class="search-form" aria-label="Ricerca oggetto da verificare">
+              <div class="field">
+                <label for="object-name">Cosa vuoi portare?</label>
+                <input
+                  id="object-name"
+                  name="object-name"
+                  type="text"
+                  placeholder="Es. powerbank, profumo, rasoio..."
+                  aria-label="Cosa vuoi portare?"
+                />
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="airline">Compagnia aerea</label>
+                  <select id="airline" name="airline" aria-label="Compagnia aerea">
+                    <option>Qualsiasi compagnia</option>
+                    <option>Ryanair</option>
+                    <option>easyJet</option>
+                    <option>Wizz Air</option>
+                    <option>ITA Airways</option>
+                    <option>Lufthansa</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="bag-type">Dove vuoi metterlo?</label>
+                  <select id="bag-type" name="bag-type" aria-label="Dove vuoi metterlo?">
+                    <option>Non lo so</option>
+                    <option>Bagaglio a mano</option>
+                    <option>Bagaglio da stiva</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block">Controlla</button>
+            </form>
+
+            <p class="search-note">Le regole possono variare in base alla compagnia e alla tratta.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="popular-searches container" aria-labelledby="popular-searches-title">
+        <h2 id="popular-searches-title">Cosa cercano gli altri viaggiatori?</h2>
+
+        <div class="chip-list" aria-label="Oggetti popolari">
+          <button type="button" class="chip" data-object="Powerbank">Powerbank</button>
+          <button type="button" class="chip" data-object="Profumo">Profumo</button>
+          <button type="button" class="chip" data-object="Rasoio">Rasoio</button>
+          <button type="button" class="chip" data-object="Forbici">Forbici</button>
+          <button type="button" class="chip" data-object="Medicinali">Medicinali</button>
+          <button type="button" class="chip" data-object="Laptop">Laptop</button>
+          <button type="button" class="chip" data-object="Cibo">Cibo</button>
+          <button type="button" class="chip" data-object="Accendino">Accendino</button>
+          <button type="button" class="chip" data-object="Piastra per capelli">Piastra per capelli</button>
+          <button type="button" class="chip" data-object="Liquidi">Liquidi</button>
+        </div>
+      </section>
+
+      <section class="result-demo container" aria-labelledby="result-demo-title">
+        <div class="section-heading">
+          <h2 id="result-demo-title">Ecco come funziona</h2>
+        </div>
+
+        <article class="result-card" aria-live="polite">
+          <div class="result-header">
+            <div>
+              <p class="result-label">POWERBANK 20.000 mAh</p>
+            </div>
+            <span class="badge">Batteria al litio</span>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-row positive">
+              <span class="status-icon" aria-hidden="true">✅</span>
+              <div>
+                <p class="mini-label">Bagaglio a mano</p>
+                <strong>Consentito</strong>
+              </div>
+            </div>
+
+            <div class="result-row negative">
+              <span class="status-icon" aria-hidden="true">❌</span>
+              <div>
+                <p class="mini-label">Bagaglio da stiva</p>
+                <strong>Non consentito</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-warning">
+            <h3>⚠️ Attenzione</h3>
+            <p>
+              “La capacità della batteria può essere soggetta a limitazioni. Controlla
+              sempre anche le condizioni della compagnia aerea.”
+            </p>
+          </div>
+
+          <div class="rule-box">
+            <p class="mini-label">Regola generale</p>
+            <p>In genere le batterie al litio fino a una determinata capacità possono essere portate nel bagaglio a mano, ma non in stiva.</p>
+          </div>
+        </article>
+      </section>
+
+      <div class="ad-placeholder container" aria-label="Spazio pubblicitario">
+        <span>Spazio pubblicitario</span>
+      </div>
+
+      <section class="how-it-works container" aria-labelledby="how-it-works-title">
+        <div class="section-heading">
+          <h2 id="how-it-works-title">Come funziona</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-icon" aria-hidden="true">🔎</div>
+            <h3>1. Cerca</h3>
+            <p>Scrivi cosa vuoi portare con te.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-icon" aria-hidden="true">🎯</div>
+            <h3>2. Seleziona</h3>
+            <p>Indica compagnia e tipo di bagaglio.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-icon" aria-hidden="true">✅</div>
+            <h3>3. Controlla</h3>
+            <p>Visualizza immediatamente le principali limitazioni.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="categories container" aria-labelledby="categories-title">
+        <div class="section-heading">
+          <h2 id="categories-title">Categorie</h2>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">🔋</div>
+            <h3>Batterie ed elettronica</h3>
+            <p>Powerbank, laptop, cavi e accessori con batterie al litio.</p>
+            <a href="oggetti/powerbank.html">Scopri gli oggetti</a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">🧴</div>
+            <h3>Liquidi e cosmetici</h3>
+            <p>Profumi, creme, shampoo e altri prodotti liquidi.</p>
+            <a href="oggetti/profumo.html">Scopri gli oggetti</a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">💊</div>
+            <h3>Medicinali</h3>
+            <p>Medicine, integratori e presidi specifici per il viaggio.</p>
+            <a href="#">Scopri gli oggetti</a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">🍔</div>
+            <h3>Cibo e bevande</h3>
+            <p>Snack, cibo preparato e contenitori per il trasporto.</p>
+            <a href="#">Scopri gli oggetti</a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">✂️</div>
+            <h3>Oggetti taglienti</h3>
+            <p>Forbici, coltelli e strumenti che spesso necessitano di verifica.</p>
+            <a href="oggetti/rasoio.html">Scopri gli oggetti</a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">🔥</div>
+            <h3>Accendini e sostanze infiammabili</h3>
+            <p>Accendini, spray e materiali con restrizioni particolari.</p>
+            <a href="#">Scopri gli oggetti</a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">🏋️</div>
+            <h3>Attrezzatura sportiva</h3>
+            <p>Attrezzi, palline e accessori da palestra o trekking.</p>
+            <a href="#">Scopri gli oggetti</a>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">👶</div>
+            <h3>Articoli per bambini</h3>
+            <p>Accessori, prodotti per neonati e oggetti per il viaggio.</p>
+            <a href="#">Scopri gli oggetti</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="company-rules container" id="compagnie" aria-labelledby="company-rules-title">
+        <div class="section-heading">
+          <h2 id="company-rules-title">Regole per compagnia aerea</h2>
+        </div>
+
+        <div class="company-grid">
+          <article class="company-card">
+            <div class="company-badge" aria-hidden="true">✈️</div>
+            <h3>Ryanair</h3>
+            <p>Regole dettagliate su liquidi, batterie e oggetti vietati.</p>
+            <a href="compagnie/ryanair.html" class="btn btn-secondary">Vedi le regole</a>
+          </article>
+
+          <article class="company-card">
+            <div class="company-badge" aria-hidden="true">✈️</div>
+            <h3>easyJet</h3>
+            <p>Controlli sul bagaglio a mano e sulle restrizioni speciali.</p>
+            <a href="compagnie/easyjet.html" class="btn btn-secondary">Vedi le regole</a>
+          </article>
+
+          <article class="company-card">
+            <div class="company-badge" aria-hidden="true">✈️</div>
+            <h3>ITA Airways</h3>
+            <p>Informazioni su limiti e documentazione richiesta.</p>
+            <a href="#" class="btn btn-secondary">Vedi le regole</a>
+          </article>
+
+          <article class="company-card">
+            <div class="company-badge" aria-hidden="true">✈️</div>
+            <h3>Wizz Air</h3>
+            <p>Linee guida utili per bagagli e oggetti personali.</p>
+            <a href="#" class="btn btn-secondary">Vedi le regole</a>
+          </article>
+
+          <article class="company-card">
+            <div class="company-badge" aria-hidden="true">✈️</div>
+            <h3>Lufthansa</h3>
+            <p>Valutazione dei limiti per liquidi e batterie al litio.</p>
+            <a href="#" class="btn btn-secondary">Vedi le regole</a>
+          </article>
+
+          <article class="company-card">
+            <div class="company-badge" aria-hidden="true">✈️</div>
+            <h3>Vueling</h3>
+            <p>Indicazioni pratiche per oggetti trasportabili e vietati.</p>
+            <a href="#" class="btn btn-secondary">Vedi le regole</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="guide-section container" id="guide" aria-labelledby="guide-title">
+        <div class="section-heading">
+          <h2 id="guide-title">Guide</h2>
+        </div>
+
+        <div class="guide-grid">
+          <article class="guide-card">
+            <div class="guide-meta">Liquidi</div>
+            <h3>Liquidi in aereo: cosa puoi portare</h3>
+            <p>Le regole principali sui contenitori, sulle dimensioni e sui limiti del bagaglio a mano.</p>
+            <a href="#">Leggi la guida</a>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-meta">Elettronica</div>
+            <h3>Powerbank e batterie al litio</h3>
+            <p>Scopri come trasportare correttamente le batterie e quali limiti applicano in cabina.</p>
+            <a href="#">Leggi la guida</a>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-meta">Bagagli</div>
+            <h3>Bagaglio a mano: gli oggetti più vietati</h3>
+            <p>Una panoramica pratica su coltelli, spray, accendini e altri articoli che non possono viaggiare in cabina.</p>
+            <a href="#">Leggi la guida</a>
+          </article>
+        </div>
+      </section>
+
+      <div class="ad-placeholder container" aria-label="Spazio pubblicitario">
+        <span>Spazio pubblicitario</span>
+      </div>
+
+      <section class="faq container" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <h2 id="faq-title">FAQ</h2>
+        </div>
+
+        <div class="faq-list">
+          <details open>
+            <summary>Le regole sono uguali per tutte le compagnie?</summary>
+            <p>No: variano in base alla compagnia, alla tratta e in alcuni casi anche all’aeroporto di partenza.</p>
+          </details>
+
+          <details>
+            <summary>Posso portare una powerbank?</summary>
+            <p>Sì, in molti casi è consentita nel bagaglio a mano, ma con limiti di capacità e senza trasporto in stiva.</p>
+          </details>
+
+          <details>
+            <summary>Posso portare liquidi nel bagaglio a mano?</summary>
+            <p>Sì, ma entro i limiti standard dei contenitori da 100 ml e con confezione in sacchetto trasparente.</p>
+          </details>
+
+          <details>
+            <summary>Cosa succede se porto un oggetto vietato?</summary>
+            <p>Potrebbe essere sequestrato prima dell’imbarco o non essere ammesso nel bagaglio a mano.</p>
+          </details>
+
+          <details>
+            <summary>Le informazioni sono sempre aggiornate?</summary>
+            <p>Questa piattaforma offre informazioni orientative: prima di partire verifica sempre le regole aggiornate del vettore e dell’aeroporto.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="disclaimer container" role="note" aria-label="Disclaimer">
+        <p>
+          PossoPortarlo? fornisce informazioni a carattere orientativo. Le regole possono variare in base a compagnia aerea, aeroporto, paese e normativa vigente. Prima della partenza verifica sempre le condizioni ufficiali del vettore e dell’aeroporto.
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span aria-hidden="true">✈️</span>
+            <span>PossoPortarlo?</span>
+          </a>
+          <p>Il motore di ricerca per viaggiare senza dubbi.</p>
+        </div>
+
+        <div>
+          <h3>Link utili</h3>
+          <ul>
+            <li><a href="#">Chi siamo</a></li>
+            <li><a href="#">Contatti</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Termini e condizioni</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Categorie</h3>
+          <ul>
+            <li><a href="#">Elettronica</a></li>
+            <li><a href="#">Liquidi</a></li>
+            <li><a href="#">Medicinali</a></li>
+            <li><a href="#">Cibo</a></li>
+            <li><a href="#">Oggetti vietati</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Compagnie</h3>
+          <ul>
+            <li><a href="compagnie/ryanair.html">Ryanair</a></li>
+            <li><a href="compagnie/easyjet.html">easyJet</a></li>
+            <li><a href="#">ITA Airways</a></li>
+            <li><a href="#">Wizz Air</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="year">2026</span> PossoPortarlo? Tutti i diritti riservati.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
